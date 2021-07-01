@@ -10,6 +10,7 @@ public class App {
         System.out.println(x++);
         System.out.println(x);
 
+        //objeto "sc" para acceder a los metodos de la clase Scanner
         Scanner sc = new Scanner(System.in);
 
         //Invocar el metodo dtNumero
@@ -31,7 +32,7 @@ public class App {
 
     public static String dtNumero(int n) {
         return "doble=" + (n * 2) + " triple=" + (n * 3);
-    }
+    }    
 
     public static double grados(double c) {
         return 32 + (9 * (c / 5));
