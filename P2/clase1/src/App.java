@@ -23,6 +23,8 @@ public class App {
         int num1 = sc.nextInt();
         System.out.println(operadorCondicional(num1));
 
+        sc.close();
+
     }
 
     //Metodo saludo
