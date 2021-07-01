@@ -6,7 +6,7 @@ public class App {
         
         //capturar info por teclado
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Digite su nombre: ");
         String resultado = sc.nextLine(); //obtenemos del teclado el nombre
         System.out.println(saludo(resultado));
