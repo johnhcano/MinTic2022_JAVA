@@ -18,12 +18,7 @@ public class App
         objPersona2.setIdentificacion(99887);
         objPersona2.setNombre("Ferney");
         System.out.println(objPersona2.getNombre());
-        System.out.println(objPersona2);
-
-
-        
-
-        
+        System.out.println(objPersona2);  
     }
 
 
