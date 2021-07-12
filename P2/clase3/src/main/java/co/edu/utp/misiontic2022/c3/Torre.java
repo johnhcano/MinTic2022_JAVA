@@ -15,8 +15,8 @@ public class Torre extends Ficha {
         return "Color Torre: " + super.getColor() + " Volumen: " + volumen;
     }
 
-    public boolean mover(){
-        return true;
+    public String mover(){
+        return "Se mueve horizontal y vertical sin límite de casillas";
     }
 
 }

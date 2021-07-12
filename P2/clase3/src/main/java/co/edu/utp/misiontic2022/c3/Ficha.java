@@ -25,8 +25,8 @@ public class Ficha {
         return false;
     }
 
-    public boolean mover(){
-        return false;
+    public String mover(){
+        return "";
     }
 
     public String toString(){
