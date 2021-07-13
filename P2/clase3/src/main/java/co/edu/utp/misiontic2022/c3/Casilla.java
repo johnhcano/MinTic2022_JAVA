@@ -9,8 +9,21 @@ public class Casilla {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
     }
+    
+    public int getCoordenadaX(){
+        return coordenadaX;
+    }
 
+    public int getCoordenadaY(){
+        return coordenadaY;
+    }
+
+    public String verCasilla(int coordenadaX, int coordenadaY, Ficha ficha){
+        return "x:" + coordenadaX + " y:" + coordenadaY + " Ficha: " + ficha;
+    }
+    
     public String toString(){
         return "(x = " + coordenadaX + ", y = " + coordenadaY + ")"; 
     }
+
 }

@@ -14,7 +14,7 @@ public class Alfil extends Ficha{
     }
 
     public String toString(){
-        return "Color Alfil: " + super.getColor() + " Volumen: " + volumen;
+        return "Alfil => Color: " + super.getColor() + " Volumen: " + volumen;
     }
     
 }

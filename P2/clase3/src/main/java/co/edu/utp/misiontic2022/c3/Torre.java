@@ -12,7 +12,7 @@ public class Torre extends Ficha {
     }
 
     public String toString(){
-        return "Color Torre: " + super.getColor() + " Volumen: " + volumen;
+        return "Torre => Color: " + super.getColor() + " Volumen: " + volumen;
     }
 
     public String mover(){
