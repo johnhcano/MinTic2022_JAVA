@@ -10,7 +10,15 @@ public class Cliente extends Persona{
     }
 
     public void mostrar(){
-        System.out.println("Cliente --> Nombre: " + super.getNombre() + " Edad: " + super.getEdad() + " Teléfono: " + telefonoContacto);
+        System.out.println("Cliente....");
+    }
+
+    public String getTelefonoContacto(){
+        return telefonoContacto;
+    }
+
+    public String toString(){
+        return "Cliente --> Nombre: " + super.getNombre() + " Edad: " + super.getEdad() + " Teléfono: " + telefonoContacto;
     }
 
 }

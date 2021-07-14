@@ -14,4 +14,8 @@ public class Empresa {
         return "Empresa: " + nombre + " Empleado: " + empleado.toString();
     }
 
+    public String contactoCliente(Cliente cliente){
+        return cliente.getTelefonoContacto();
+    }
+
 }

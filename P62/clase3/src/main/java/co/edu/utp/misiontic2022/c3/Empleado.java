@@ -10,7 +10,7 @@ public class Empleado extends Persona{
     }
 
     public void mostrar(){
-        System.out.println("Empleado --> Nombre: " + super.getNombre() + " Edad: " + super.getEdad() + " Sueldo: " + sueldoBruto);
+        System.out.println("Empleado.....");
     }
 
     public String toString(){

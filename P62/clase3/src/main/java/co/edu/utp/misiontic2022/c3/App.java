@@ -23,6 +23,9 @@ public class App
         Empresa objEmpresa = new Empresa("MisiónTic2022", (Empleado)objPersona1);
         System.out.println(objEmpresa.toString());
 
+        //Agregación
+        System.out.println(objEmpresa.contactoCliente((Cliente)objPersona2));
+
 
     }
 }
