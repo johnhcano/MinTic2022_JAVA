@@ -13,5 +13,9 @@ public class Empresa {
     public String toString(){
         return "Empresa: " + nombre + "Empleado: " + empleado;
     }
-    
+
+    public String informacionCliente(Cliente cliente){
+        return "Información: " + cliente.getNumeroContacto();
+    }
+
 }
