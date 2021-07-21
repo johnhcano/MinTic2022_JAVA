@@ -21,6 +21,7 @@ public class App {
             while(rs.next())
             {
                 // read the result set
+                System.out.println("id = " + rs.getInt("employee_id"));
                 System.out.println("apellido = " + rs.getString("last_name"));
                 System.out.println("nombre = " + rs.getString("first_name"));
             }
