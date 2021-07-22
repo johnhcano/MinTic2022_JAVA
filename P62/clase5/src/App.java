@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -34,6 +35,11 @@ public class App {
             statement.executeUpdate("create table misiontic (id integer, name string)");
             statement.executeUpdate("insert into misiontic values(1, 'Ciclo1')");
             statement.executeUpdate("insert into misiontic values(2, 'Ciclo2')");
+
+            PreparedStatement ps = connection.prepareStatement("insert into misiontic values(?, ?)");
+            ps.setInt(1, 3);
+            ps.setString(2, "Ciclo3");
+            ps.executeUpdate();
 
             ResultSet consulta = statement.executeQuery("SELECT * FROM misiontic");
             while(consulta.next())
