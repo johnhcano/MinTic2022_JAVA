@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -21,8 +22,29 @@ public class App {
             while(rs.next())
             {
                 // read the result set
+                System.out.println("id = " + rs.getInt("employee_id"));
                 System.out.println("apellido = " + rs.getString("last_name"));
                 System.out.println("nombre = " + rs.getString("first_name"));
+            }
+
+            //------------------------------------------
+            statement.executeUpdate("drop table if exists persona");
+            statement.executeUpdate("create table persona (cedula integer, nombre string)");
+            statement.executeUpdate("insert into persona values(1, 'Jhon')");
+            statement.executeUpdate("insert into persona values(2, 'Patricia')");
+            
+            PreparedStatement ps = connection.prepareStatement("insert into persona values(?, ?)");
+            ps.setInt(1, 3);
+            ps.setString(2, "Pedro");
+            ps.executeUpdate();
+
+            ResultSet consulta = statement.executeQuery("SELECT * FROM persona");
+            while(consulta.next())
+            {
+                // read the result set
+                System.out.print("Cédula = " + consulta.getInt("cedula"));
+                System.out.println(", Nombre = " + consulta.getString("nombre"));
+                
             }
 
         } catch (Exception e) {
