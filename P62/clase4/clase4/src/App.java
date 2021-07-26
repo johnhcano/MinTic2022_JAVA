@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class App {
     public static void main(String[] args) {
         
@@ -25,5 +27,18 @@ public class App {
         for(int i = 0; i < alumnos.length; i++){
             System.out.println(alumnos[i].toString());
         }
+
+        /* Ventanas con JOptionPane */
+        //Mostrar información
+        JOptionPane.showMessageDialog(null,"Hola!!! Grupo #62");
+        
+        //Obtener por parte del usuario datos de entrada
+        String nombre = JOptionPane.showInputDialog("Por favor escriba su nombre...");
+        JOptionPane.showMessageDialog(null, "Bienvenido!!! .:" + nombre + ":.");
+
+        int n1 = Integer.parseInt(JOptionPane.showInputDialog("Digite número1.."));
+        double n2 = Double.parseDouble(JOptionPane.showInputDialog("Digite número2.."));
+        JOptionPane.showMessageDialog(null, "n1=" + n1 + "n2=" + n2);
+
     }
 }
