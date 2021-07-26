@@ -2,9 +2,18 @@ package co.edu.utp.misiontic2022.c3;
 
 public class Casilla {
     
+    //CONSTANTES
+    private final static int COORDENADAX = 2;
+    private final static int COORDENADAY = 5;
+
     private int coordenadaX;
     private int coordenadaY;
 
+    public Casilla(){
+        coordenadaX = COORDENADAX;
+        coordenadaY = COORDENADAY;
+    }
+    
     public Casilla(int coordenadaX, int coordenadaY){
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
