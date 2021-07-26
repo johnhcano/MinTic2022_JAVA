@@ -26,6 +26,7 @@ public class App {
 
         for(int i = 0; i < alumnos.length; i++){
             System.out.println(alumnos[i].toString());
+            JOptionPane.showMessageDialog(null, alumnos[i].toString());
         }
 
         /* Ventanas con JOptionPane */
