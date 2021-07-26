@@ -44,7 +44,7 @@ public class App extends JFrame {
                 resultado.setText(String.valueOf(suma));
             }
         });
-    } // construtor
+    } // constructor
 
     public static void main(String[] args) {
         App ejemplo = new App();
