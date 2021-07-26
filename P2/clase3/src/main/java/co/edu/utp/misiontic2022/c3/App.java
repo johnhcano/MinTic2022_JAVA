@@ -58,5 +58,20 @@ public class App
             6 < 7  V            arreglo[6]=14   7
             7 < 7  F       
         */
+
+        /* 
+            Arreglo de objetos de tipo Ficha 
+        */
+
+        Ficha[] objFicha = new Ficha[3];
+        
+        objFicha[0] = new Torre("Blanco", 3.45);
+        objFicha[1] = new Alfil("Blanco", 5.0);
+        objFicha[2] = new Torre("Negro", 3.45);
+
+        for(int i = 0; i < objFicha.length; i++){
+            System.out.println(objFicha[i].mover());
+        }
+
     }
 }
