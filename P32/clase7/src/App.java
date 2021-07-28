@@ -2,11 +2,12 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class App extends JFrame {
-
+    
     private JButton boton;
     private JTextField campo1;
     private JTextField campo2;
     private JLabel resultado;
+    private JTextField campo3;
 
     public App() {
         
@@ -27,21 +28,31 @@ public class App extends JFrame {
         campo2 = new JTextField();
         campo2.setBounds(40, 0, 100, 30);
         this.add(campo2);
+        
+        campo3 = new JTextField();
+        campo3.setBounds(150, 150, 50, 30);
+        this.add(campo3);
 
         resultado = new JLabel();
-        resultado.setText("Resultado");
+        resultado.setText("Resultado =>");
         resultado.setBounds(50, 150, 100, 30);
         this.add(resultado);
 
         // Adicionando un evento action al botón
         boton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-
-                // Acción que realizará el botón al hacer clic en el.
-                int num1 = Integer.parseInt(campo1.getText());
-                int num2 = Integer.parseInt(campo2.getText());
-                int suma = num1 + num2;
-                resultado.setText(String.valueOf(suma));
+                try{
+                    // Acción que realizará el botón al hacer clic en el.
+                    int num1 = Integer.parseInt(campo1.getText());
+                    int num2 = Integer.parseInt(campo2.getText());
+                    int suma = num1 + num2;
+                    campo3.setText(String.valueOf(suma));
+                    //resultado.setText(String.valueOf(suma));
+                    //resultado.setText(Integer.toString(suma));
+                }catch(NumberFormatException e){
+                    System.out.println(e);
+                    JOptionPane.showMessageDialog(null, "Por favor digite números enteros");
+                }
             }
         });
     } // constructor
