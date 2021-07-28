@@ -9,6 +9,7 @@ public class Controlador implements ActionListener {
         this.vista = vista;
         this.modelo = modelo;
         this.vista.btnSumar.addActionListener(this);
+        this.vista.btnRestar.addActionListener(this);
     }
 
     public void iniciar() {
@@ -20,7 +21,12 @@ public class Controlador implements ActionListener {
         try{
             modelo.setNumero1(Integer.parseInt(vista.txtCampo1.getText()));
             modelo.setNumero2(Integer.parseInt(vista.txtCampo2.getText()));
-            modelo.sumar();
+            if (evt.getSource() == vista.btnSumar){
+                modelo.sumar();
+            }
+            if (evt.getSource() == vista.btnRestar){
+                modelo.restar();
+            }
             vista.txtResultado.setText(String.valueOf(modelo.getResultado()));
         }catch(NumberFormatException e){
             System.out.println(e);
