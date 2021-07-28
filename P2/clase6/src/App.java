@@ -29,7 +29,7 @@ public class App extends JFrame {
         this.add(campo2);
 
         resultado = new JLabel();
-        resultado.setText("Resultado");
+        resultado.setText("0");
         resultado.setBounds(50, 150, 100, 30);
         this.add(resultado);
 
@@ -41,7 +41,8 @@ public class App extends JFrame {
                 int num1 = Integer.parseInt(campo1.getText());
                 int num2 = Integer.parseInt(campo2.getText());
                 int suma = num1 + num2;
-                resultado.setText(String.valueOf(suma));
+                //resultado.setText(String.valueOf(suma));
+                resultado.setText(Integer.toString(suma));
             }
         });
     } // construtor
