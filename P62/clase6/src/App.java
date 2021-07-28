@@ -11,7 +11,7 @@ public class App extends JFrame {
     public App() {
         
         this.setTitle("Ejemplo");
-        this.setBounds(0, 0, 200, 200);
+        this.setBounds(100, 100, 300, 250);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.getContentPane().setLayout(null);
 
@@ -29,7 +29,7 @@ public class App extends JFrame {
         this.add(campo2);
 
         resultado = new JLabel();
-        resultado.setText("Resultado");
+        resultado.setText("0");
         resultado.setBounds(50, 150, 100, 30);
         this.add(resultado);
 

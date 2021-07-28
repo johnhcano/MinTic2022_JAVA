@@ -47,6 +47,17 @@ public class App {
                 
             }
 
+            statement.executeUpdate("DELETE FROM persona WHERE cedula = 2");
+            statement.executeUpdate("UPDATE persona SET nombre = 'Julian Cardona' WHERE cedula = 1");
+
+            ResultSet consulta1 = statement.executeQuery("SELECT * FROM persona");
+            while(consulta1.next())
+            {
+                // read the result set
+                System.out.print("Cédula = " + consulta1.getInt("cedula"));
+                System.out.println(", Nombre = " + consulta1.getString("nombre"));
+                
+            }
         } catch (Exception e) {
             // TODO: handle exception
             System.err.println(e.getClass().getName() + ":" + e.getMessage());
