@@ -33,4 +33,9 @@ public class Modelo {
         return resultado;
     }
 
+    public int restar(){
+        resultado = numeroUno - numeroDos;
+        return resultado;
+    }
+
 }
