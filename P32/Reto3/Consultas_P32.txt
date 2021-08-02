@@ -1,0 +1,109 @@
+Consulta 1:
+SELECT Constructora, Fecha_Inicio, Clasificacion 
+FROM Proyecto
+WHERE Ciudad = 'Santa Marta';
+
+Resultado1:
+Constructora         |Fecha_Inicio|Clasificacion |
+---------------------+------------+--------------+
+Ingenieros Ltda.     |2020-12-07  |Casa          |
+Hermanos Gallego     |2020-12-07  |Casa Campestre|
+Ingenieros Ltda.     |2020-06-15  |Condominio    |
+Arquitectura S.A.    |2021-04-04  |Apartaestudio |
+Edificios y Edificios|2020-12-07  |Casa          |
+Edificios y Edificios|2019-09-09  |Casa          |
+Hermanos Gallego     |2021-04-04  |Condominio    |
+Ingenieros Ltda.     |2021-04-04  |Apartaestudio |
+Edificios y Edificios|2020-12-07  |Casa          |
+Arquitectura S.A.    |2019-09-09  |Casa Campestre|
+Ingenieros Ltda.     |2020-06-15  |Apartaestudio |
+Arquitectura S.A.    |2019-09-09  |Condominio    |
+Arquitectura S.A.    |2021-04-04  |Casa          |
+Hermanos Gallego     |2021-04-04  |Casa          |
+Arquitectura S.A.    |2019-09-09  |Casa Campestre|
+Pegaso               |2020-06-15  |Casa Campestre|
+Edificios y Edificios|2019-09-09  |Condominio    |
+Arquitectura S.A.    |2019-09-09  |Casa Campestre|
+Hermanos Gallego     |2020-12-07  |Casa Campestre|
+Arquitectura S.A.    |2020-06-15  |Apartamento   |
+Pegaso               |2021-04-04  |Casa Campestre|
+
+**************************************************************
+
+Consulta 2:
+SELECT c.Proveedor, c.Cantidad, c.Pagado, mc.Nombre_Material 
+FROM Compra c 
+INNER JOIN MaterialConstruccion mc ON c.ID_MaterialConstruccion = mc.ID_MaterialConstruccion 
+AND mc.Nombre_Material = 'Granito'
+AND c.Pagado = 'Si';
+
+Resultado2:
+Proveedor            |Cantidad|Pagado|Nombre_Material|
+---------------------+--------+------+---------------+
+Homecenter           |       6|Si    |Granito        |
+Homecenter           |       7|Si    |Granito        |
+JUMBO                |       4|Si    |Granito        |
+Bricolajes La Alameda|      12|Si    |Granito        |
+Homecenter           |       7|Si    |Granito        |
+Bricolajes La Alameda|      19|Si    |Granito        |
+Cementos El Dorado   |      15|Si    |Granito        |
+Minerales Estalactita|       6|Si    |Granito        |
+Bricolajes La Alameda|      16|Si    |Granito        |
+Cementos El Dorado   |       5|Si    |Granito        |
+JUMBO                |      10|Si    |Granito        |
+Cementos El Dorado   |      20|Si    |Granito        |
+Homecenter           |       4|Si    |Granito        |
+Cementos El Dorado   |       7|Si    |Granito        |
+Bricolajes La Alameda|       1|Si    |Granito        |
+Homecenter           |      19|Si    |Granito        |
+Bricolajes La Alameda|       9|Si    |Granito        |
+Cementos El Dorado   |      11|Si    |Granito        |
+JUMBO                |      10|Si    |Granito        |
+JUMBO                |      16|Si    |Granito        |
+Homecenter           |       9|Si    |Granito        |
+Homecenter           |       1|Si    |Granito        |
+JUMBO                |      16|Si    |Granito        |
+
+**************************************************************
+Consulta 3:
+SELECT SUM(c.Cantidad) 
+FROM Compra c
+WHERE c.Proveedor = 'JUMBO';
+
+Resultado3:
+SUM(c.Cantidad)|
+---------------+
+           3118|
+
+**************************************************************
+
+Consulta 4:
+SELECT l.Nombre || " " ||l.Primer_Apellido || " " ||l.Segundo_Apellido AS "Nombre Líder"
+FROM Lider l
+WHERE l.Ciudad_Residencia = 'Dubai';
+
+Resultado4:
+Nombre Líder          |
+----------------------+
+George Falcon Arias   |
+Jack Arteaga Andrade  |
+Roncancio Orozco Arias|
+Homero Perez Parra    |
+Nadia Pelaez Galvis   |
+Carlos Camargo Arias  |
+
+**************************************************************
+
+Consulta 5:
+SELECT COUNT(p.Numero_Banos) as Banos, Constructora 
+FROM Proyecto p 
+GROUP BY Constructora
+HAVING Banos > 80;
+
+Resultado5:
+Banos|Constructora     |
+-----+-----------------+
+   85|Arquitectura S.A.|
+   86|Ingenieros Ltda. |
+   84|Pegaso           |
+**************************************************************
