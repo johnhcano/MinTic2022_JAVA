@@ -44,8 +44,8 @@ public class CompraFlota {
      */
 	public CompraFlota()
     {
-		proyecto = "UTP Ciclo 2 Java";  
-		tiempo = 0;
+        proyecto = "UTP Ciclo 2 Java";
+        tiempo = 0;
         capital = 0;
         interes = 0;
     }
