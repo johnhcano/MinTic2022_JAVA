@@ -1,0 +1,117 @@
+Consulta 1:
+SELECT Constructora, Fecha_Inicio, Clasificacion 
+FROM Proyecto
+WHERE Ciudad = 'Pereira';
+
+Resultado1:
+Constructora         |Fecha_Inicio|Clasificacion |
+---------------------+------------+--------------+
+Ingenieros Ltda.     |2021-04-04  |Condominio    |
+Hermanos Gallego     |2021-04-04  |Apartaestudio |
+Edificios y Edificios|2019-09-09  |Casa          |
+Edificios y Edificios|2021-04-04  |Apartamento   |
+Arquitectura S.A.    |2019-09-09  |Casa Campestre|
+Ingenieros Ltda.     |2021-04-04  |Apartaestudio |
+Pegaso               |2020-12-07  |Casa          |
+Ingenieros Ltda.     |2019-09-09  |Condominio    |
+Edificios y Edificios|2020-06-15  |Casa          |
+Ingenieros Ltda.     |2021-04-04  |Condominio    |
+Hermanos Gallego     |2020-06-15  |Casa          |
+Edificios y Edificios|2021-04-04  |Condominio    |
+Hermanos Gallego     |2019-09-09  |Casa          |
+Pegaso               |2019-09-09  |Condominio    |
+Ingenieros Ltda.     |2020-06-15  |Condominio    |
+Arquitectura S.A.    |2021-04-04  |Apartaestudio |
+Hermanos Gallego     |2020-12-07  |Casa          |
+Arquitectura S.A.    |2020-06-15  |Casa Campestre|
+Ingenieros Ltda.     |2020-12-07  |Apartaestudio |
+Pegaso               |2020-06-15  |Apartamento   |
+Pegaso               |2020-06-15  |Casa          |
+Edificios y Edificios|2020-12-07  |Casa          |
+Edificios y Edificios|2020-06-15  |Casa          |
+Pegaso               |2021-04-04  |Casa Campestre|
+Pegaso               |2021-04-04  |Condominio    |
+Edificios y Edificios|2019-09-09  |Apartaestudio |
+Edificios y Edificios|2020-06-15  |Casa Campestre|
+Ingenieros Ltda.     |2020-06-15  |Casa          |
+Pegaso               |2020-06-15  |Casa Campestre|
+Edificios y Edificios|2020-12-07  |Condominio    |
+Arquitectura S.A.    |2019-09-09  |Casa Campestre|
+Arquitectura S.A.    |2020-06-15  |Apartaestudio |
+
+**************************************************************
+
+Consulta 2:
+SELECT c.Proveedor, c.Cantidad, c.Pagado, mc.Nombre_Material 
+FROM Compra c 
+INNER JOIN MaterialConstruccion mc ON c.ID_MaterialConstruccion = mc.ID_MaterialConstruccion 
+AND mc.Nombre_Material = 'Vidrio'
+AND c.Pagado = 'Si';
+
+Resultado2:
+Proveedor            |Cantidad|Pagado|Nombre_Material|
+---------------------+--------+------+---------------+
+Minerales Estalactita|      20|Si    |Vidrio         |
+JUMBO                |      18|Si    |Vidrio         |
+Homecenter           |      16|Si    |Vidrio         |
+Bricolajes La Alameda|      20|Si    |Vidrio         |
+Minerales Estalactita|       4|Si    |Vidrio         |
+Cementos El Dorado   |       3|Si    |Vidrio         |
+Cementos El Dorado   |      15|Si    |Vidrio         |
+Homecenter           |       6|Si    |Vidrio         |
+Minerales Estalactita|      11|Si    |Vidrio         |
+Cementos El Dorado   |      20|Si    |Vidrio         |
+JUMBO                |      10|Si    |Vidrio         |
+Bricolajes La Alameda|      19|Si    |Vidrio         |
+Cementos El Dorado   |       6|Si    |Vidrio         |
+Cementos El Dorado   |       3|Si    |Vidrio         |
+Cementos El Dorado   |      16|Si    |Vidrio         |
+Minerales Estalactita|      19|Si    |Vidrio         |
+Cementos El Dorado   |       3|Si    |Vidrio         |
+Homecenter           |      11|Si    |Vidrio         |
+Minerales Estalactita|       7|Si    |Vidrio         |
+Bricolajes La Alameda|      10|Si    |Vidrio         |
+Homecenter           |      19|Si    |Vidrio         |
+Cementos El Dorado   |      10|Si    |Vidrio         |
+Bricolajes La Alameda|      20|Si    |Vidrio         |
+Bricolajes La Alameda|      20|Si    |Vidrio         |
+
+**************************************************************
+Consulta 3:
+SELECT SUM(c.Cantidad) 
+FROM Compra c
+WHERE Proveedor = 'Homecenter';
+
+Resultado3:
+SUM(c.Cantidad)|
+---------------+
+           2913|
+
+**************************************************************
+
+Consulta 4:
+SELECT l.Nombre || " " ||l.Primer_Apellido || " " ||l.Segundo_Apellido AS "Nombre Líder"
+FROM Lider l
+WHERE l.Ciudad_Residencia = 'Londres';
+
+Resultado4:
+Nombre Líder           |
+-----------------------+
+Libia Perez Hernandez  |
+Homero Rodriguez Ardila|
+
+**************************************************************
+
+Consulta 5:
+SELECT COUNT(p.Numero_Habitaciones) as Habitaciones, Constructora 
+FROM Proyecto p 
+GROUP BY Constructora
+HAVING Habitaciones > 80;
+
+Resultado5:
+Habitaciones|Constructora     |
+------------+-----------------+
+          85|Arquitectura S.A.|
+          86|Ingenieros Ltda. |
+          84|Pegaso           |
+**************************************************************
