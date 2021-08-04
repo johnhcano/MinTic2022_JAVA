@@ -15,10 +15,13 @@ public class App {
         System.out.println(documentos.size());
         
         for(int i = 0; i < documentos.size(); i++){
-            System.out.println(documentos.get(i));
+            System.out.println(documentos.get(i).toString());
         }
-        
 
+        documentos.forEach((doc) -> {
+            System.out.println(doc.toString());
+        });
+        
         //-----------------------------------------------
 
         Converter[] convertidor = new Converter[3];
