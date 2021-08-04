@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         
-        ArrayList<Converter> documentos = new ArrayList();
+        ArrayList<Converter> documentos = new ArrayList<>();
 
         Converter objDoc1 = new ASCIIConverter("1", "Lectura");
         Converter objDoc2 = new PostScriptConverter("1", "Lectura");
@@ -18,9 +18,17 @@ public class App {
             System.out.println(documentos.get(i).toString());
         }
 
+        System.out.println("--------------------");
+
         documentos.forEach((doc) -> {
             System.out.println(doc.toString());
         });
+
+        System.out.println("--------------------");
+
+        for(Converter doc: documentos){
+            System.out.println(doc.toString());
+        }
         
         //-----------------------------------------------
 
