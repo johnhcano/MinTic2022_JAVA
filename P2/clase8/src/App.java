@@ -38,5 +38,9 @@ public class App {
         convertidor[1] = new PostScriptConverter("1", "Lectura");
         convertidor[2] = new PDFConverter("1", "Lectura");
         
+        //------------------------- Ejecución con la clase Reader
+        System.out.println("Reader...");
+        Reader lector = new Reader("1", documentos.get(0));
+        lector.parseInput();
     }
 }
