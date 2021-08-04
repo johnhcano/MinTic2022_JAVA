@@ -42,5 +42,12 @@ public class App {
         System.out.println("Reader...");
         Reader lector = new Reader("1", documentos.get(0));
         lector.parseInput();
+
+        /*Reader lector = new Reader ("1", documentos.get(0));
+        Reader lector1 = new Reader ("2", documentos.get(1));
+        Reader lector2 = new Reader ("3", documentos.get(2));
+        lector.parseInput();
+        lector1.parseInput();
+        lector2.parseInput();*/
     }
 }
