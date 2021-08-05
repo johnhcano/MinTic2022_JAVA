@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class App {
     public static void main(String[] args) {
         
@@ -15,8 +17,25 @@ public class App {
         documentos.add(word);
         documentos.add(ppt);
 
-        Reader lector = new Reader("2", documentos.get(1));
-        System.out.println("lector " + lector.parseInput());
+        Reader lector;
+        int op = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite opción.."));
+        switch(op){
+            case 1:  
+                lector = new Reader("1", documentos.get(0));
+                System.out.println("lector " + lector.parseInput());
+                break;
+            case 2:
+                lector = new Reader("2", documentos.get(1));
+                System.out.println("lector " + lector.parseInput());
+                break;
+            case 3:
+                lector = new Reader("3", documentos.get(2));
+                System.out.println("lector " + lector.parseInput());
+                break;
+            default:
+                System.out.println("Opción Incorrecta");
+                break;
+        }
 
         System.out.println("------------Explicación ArrayList VS Array----");
         ArrayList<String> nombres = new ArrayList<>();
