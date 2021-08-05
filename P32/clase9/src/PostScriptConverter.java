@@ -5,14 +5,14 @@ public class PostScriptConverter extends Converter {
     }
     
     public String makeLine(){
-        return "Línea con PostScript";
+        return "Línea con PostScript " + super.getDocument();
     }
 
     public String makeParagraph(){
-        return "Párrafo con PostScript";
+        return "Párrafo con PostScript " + super.getDocument();
     }
 
     public String makeTable(){
-        return "Tabla con PostScript";
+        return "Tabla con PostScript " + super.getDocument();
     }
 }
