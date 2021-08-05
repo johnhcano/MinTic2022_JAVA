@@ -31,5 +31,18 @@ public class App {
             System.out.println("for: -> " + c);
         }
 
+        //-------Creación de los objetos Coverter en un ArrayList-----
+
+        Converter doc1 = new ASCIIConverter("Carta");
+        Converter doc2 = new PostScriptConverter("Nómina");
+        Converter doc3 = new PDFConverter("Examen");
+
+        ArrayList<Converter> documentos = new ArrayList<>();
+        documentos.add(doc1);
+        documentos.add(doc2);
+        documentos.add(doc3);
+
+        Reader lector = new Reader("TABLE", documentos.get(1));
+        System.out.println(lector.parseInput());
     }
 }
