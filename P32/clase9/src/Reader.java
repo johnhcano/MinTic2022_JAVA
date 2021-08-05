@@ -17,7 +17,22 @@ public class Reader {
     }
 
     public String parseInput(){
-        return "";
+        String msg = "";
+        switch(element){
+            case "PARAGRAPH":
+                msg = converter.makeParagraph();
+                break;
+            case "LINE":
+                msg = converter.makeLine();
+                break;
+            case "TABLE":
+                msg = converter.makeTable();
+                break;
+            default:
+                msg = "Selección no encontrada";
+                break;
+        }
+        return msg;
     }
     
 }
