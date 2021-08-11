@@ -29,7 +29,7 @@ public class ProyectoCiudadDao {
                             + "FROM Proyecto "
                             + "WHERE Ciudad = 'Santa Marta';";
 
-            PreparedStatement statement = conexion.prepareStament(consulta);
+            PreparedStatement statement = conexion.prepareStatement(consulta);
             ResultSet resultSet = statement.executeQuery();
 
             while(resultSet.next()){
