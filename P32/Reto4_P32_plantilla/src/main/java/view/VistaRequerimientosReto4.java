@@ -15,6 +15,15 @@ public class VistaRequerimientosReto4 {
 
     public static void requerimiento1() {
 
+        try{
+            ArrayList<ProyectoCiudad> rankingProyectosCiudad = controlador.consultarProyectoCiudad();
+
+            for(ProyectoCiudad p: rankingProyectosCiudad){
+                System.out.printf("%s %s %s %n", p.getConstructora(), p.getFechaInicio(), p.getClasificacion());
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
 
     public static void requerimiento3() {

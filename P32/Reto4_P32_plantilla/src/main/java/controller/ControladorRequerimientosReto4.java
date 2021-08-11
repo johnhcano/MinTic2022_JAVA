@@ -27,7 +27,7 @@ public class ControladorRequerimientosReto4 {
     }
 
     public ArrayList<ProyectoCiudad> consultarProyectoCiudad() throws SQLException {
-        
+        return this.proyectoCiudadDao.rankingProyectosCiudad();
     }
 
 /*    public ArrayList<LiderCiudad> consultarLiderCiudad() throws SQLException {
