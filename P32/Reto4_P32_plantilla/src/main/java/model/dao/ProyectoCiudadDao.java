@@ -19,9 +19,12 @@ public class ProyectoCiudadDao {
 
     public ArrayList<ProyectoCiudad> rankingProyectosCiudad() throws SQLException {
 
+        ArrayList<ProyectoCiudad> respuesta = new ArrayList<ProyectoCiudad>();
+        Connection conexion = JDBCUtilities.getConnection();
 
         try {
-            
+            String consulta = "SELECT p.Constructora, p.Fecha_Inicio, p.Clasificacion FROM Proyecto p WHERE p.Ciudad = 'Santa Marta';";
+
             resultSet.close();
             statement.close();
 
