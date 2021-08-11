@@ -14,7 +14,16 @@ public class VistaRequerimientosReto4 {
     public static ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
 
     public static void requerimiento1() {
+        try{
+            ArrayList<ProyectoCiudad> rankingProyectosCiudad = controlador.consultarProyectoCiudad();
 
+            System.out.println("-----Proyecto Ciudad-------");
+            for(ProyectoCiudad proyectoCiudad: rankingProyectosCiudad){
+                System.out.printf("%s %s %s %n", proyectoCiudad.getConstructora(), proyectoCiudad.getFechaInicio(), proyectoCiudad.getClasificacion());
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
 
     }
 
