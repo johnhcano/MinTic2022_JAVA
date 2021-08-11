@@ -15,22 +15,9 @@ public class VistaRequerimientosReto4 {
 
     public static void requerimiento1() {
 
-        System.out.println("-----Proyecto Ciudad-------");
-        System.out.println("Constructora Fecha_Inicio Clasificación");
-        try {
-            ArrayList<ProyectoCiudad> proyectos = controlador.consultarProyectoCiudad();
-
-            for(ProyectoCiudad p: proyectos){
-                System.out.printf("%s %s %s %n",p.getConstructora(), p.getFechaInicio(), p.getClasificacion());
-            }
-        }catch(SQLException e){
-            System.out.println(e);
-        }
     }
 
     public static void requerimiento3() {
-
-        
 
     }
 
