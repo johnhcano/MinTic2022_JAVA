@@ -23,7 +23,22 @@ public class ProyectoCiudadDao {
         Connection conexion = JDBCUtilities.getConnection();
 
         try {
-            String consulta = "SELECT p.Constructora, p.Fecha_Inicio, p.Clasificacion FROM Proyecto p WHERE p.Ciudad = 'Santa Marta';";
+            String consulta = "SELECT Constructora, "
+                            + "Fecha_Inicio, "
+                            + "Clasificacion "
+                            + "FROM Proyecto "
+                            + "WHERE Ciudad = 'Santa Marta';";
+
+            PreparedStatement statement = conexion.PreparedStatement(consulta);
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()){
+                ProyectoCiudad proyectoCiudad = new ProyectoCiudad();
+                proyectoCiudad.setConstructora(resultSet.getString("Constructora"));
+                proyectoCiudad.setFechaInicio(resultSet.getString("Fecha_Inicio"));
+                proyectoCiudad.setClasificacion(resultSet.getString("Clasificacion"));
+                respuesta.add(proyectoCiudad);
+            }
 
             resultSet.close();
             statement.close();
