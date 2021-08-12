@@ -15,6 +15,9 @@ public class VistaRequerimientosReto4 {
 
     public static void requerimiento1() {
 
+        System.out.println("-----Proyecto Ciudad-------");
+        System.out.println("Constructora Fecha_Inicio Clasificación");
+        
         try{
             ArrayList<ProyectoCiudad> rankingProyectosCiudad = controlador.consultarProyectoCiudad();
 
