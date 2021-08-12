@@ -18,6 +18,7 @@ public class VistaRequerimientosReto4 {
             ArrayList<ProyectoCiudad> rankingProyectosCiudad = controlador.consultarProyectoCiudad();
 
             System.out.println("-----Proyecto Ciudad-------");
+            System.out.println("Constructora Fecha_Inicio Clasificación");
             for(ProyectoCiudad proyectoCiudad: rankingProyectosCiudad){
                 System.out.printf("%s %s %s %n", proyectoCiudad.getConstructora(), proyectoCiudad.getFechaInicio(), proyectoCiudad.getClasificacion());
             }
@@ -29,13 +30,15 @@ public class VistaRequerimientosReto4 {
 
     public static void requerimiento3() {
 
-        
+            System.out.println("-----Suma Cantidades-------");
+            System.out.println("Suma Cantidades");
 
     }
 
     public static void requerimiento4() {
 
-        
+            System.out.println("-----Líder Ciudad-------");
+            System.out.println("Nombre Líder");
 
     }
 
