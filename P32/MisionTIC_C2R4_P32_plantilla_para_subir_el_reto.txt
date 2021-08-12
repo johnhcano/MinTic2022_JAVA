@@ -10,7 +10,29 @@ import java.sql.ResultSet;
 //Vista
 public class VistaRequerimientosReto4 {
 
-    public static final ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
+    public static ControladorRequerimientosReto4 controlador = new ControladorRequerimientosReto4();
+
+    public static void requerimiento1() {
+
+        System.out.println("-----Proyecto Ciudad-------");
+        System.out.println("Constructora Fecha_Inicio Clasificación");
+        
+        try{
+            ArrayList<ProyectoCiudad> rankingProyectosCiudad = controlador.consultarProyectoCiudad();
+
+            for(ProyectoCiudad p: rankingProyectosCiudad){
+                System.out.printf("%s %s %s %n", p.getConstructora(), p.getFechaInicio(), p.getClasificacion());
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+
+    public static void requerimiento3() {
+    }
+
+    public static void requerimiento4() {   
+    }
 
     
 }
@@ -18,8 +40,30 @@ public class VistaRequerimientosReto4 {
 //Controlador
 public class ControladorRequerimientosReto4 {
 
-    
+    private ProyectoCiudadDao proyectoCiudadDao;
+    //private LiderCiudadDao liderCiudadDao;
+    //private SumaProveedorDao sumaProveedorDao;
+
+    public ControladorRequerimientosReto4(){
+        this.proyectoCiudadDao = new ProyectoCiudadDao();
+        //this.liderCiudadDao = new LiderCiudadDao();
+        //this.sumaProveedorDao = new SumaProveedorDao();
+    }
+
+    public ArrayList<ProyectoCiudad> consultarProyectoCiudad() throws SQLException {
+        return this.proyectoCiudadDao.rankingProyectosCiudad();
+    }
+
+/*    public ArrayList<LiderCiudad> consultarLiderCiudad() throws SQLException {
+        return this.liderCiudadDao.rankingLiderCiudad();
+    }
+
+    public ArrayList<SumaProveedor> consultarSumaProveedor() throws SQLException {
+        return this.sumaProveedorDao.rankingSumaProveedor();
+    }
+*/
 }
+
 
 //DAO´s
 
@@ -27,14 +71,47 @@ public class ProyectoCiudadDao {
 
     public ArrayList<ProyectoCiudad> rankingProyectosCiudad() throws SQLException {
 
-                
-    }  
+        ArrayList<ProyectoCiudad> respuesta = new ArrayList<ProyectoCiudad>();
+        Connection conexion = JDBCUtilities.getConnection();
 
+        try {
+            String consulta = "SELECT Constructora, "
+                            + "Fecha_Inicio, "
+                            + "Clasificacion "
+                            + "FROM Proyecto "
+                            + "WHERE Ciudad = 'Santa Marta';";
+
+            PreparedStatement statement = conexion.prepareStatement(consulta);
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()){
+                ProyectoCiudad proyectoCiudad = new ProyectoCiudad();
+                proyectoCiudad.setConstructora(resultSet.getString("Constructora"));
+                proyectoCiudad.setFechaInicio(resultSet.getString("Fecha_Inicio"));
+                proyectoCiudad.setClasificacion(resultSet.getString("Clasificacion"));
+                respuesta.add(proyectoCiudad);
+            }
+
+            resultSet.close();
+            statement.close();
+
+        }catch(SQLException e){
+            System.err.println("Error consultando Proyecto Ciudad!!" + e);
+            
+        }finally{
+            if(conexion != null){
+                conexion.close();
+            }
+        }
+        
+            return respuesta;
+    }
+    
 }
 
 public class SumaProveedorDao {
 
-        }
+
 
 }
 
@@ -150,4 +227,3 @@ public class JDBCUtilities {
     }
 
 }
-
