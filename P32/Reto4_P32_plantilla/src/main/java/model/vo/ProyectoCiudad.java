@@ -12,7 +12,7 @@ public class ProyectoCiudad {
     public ProyectoCiudad(String constructora, String fechaInicio, String clasificacion){
         this.constructora = constructora;
         this.fechaInicio = fechaInicio;
-        this.clasificaion = clasificacion;
+        this.clasificacion = clasificacion;
     }
 
     public String getConstructora(){
