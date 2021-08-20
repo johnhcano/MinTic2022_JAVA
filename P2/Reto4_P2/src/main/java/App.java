@@ -1,10 +1,12 @@
 import view.VistaRequerimientosReto4;
+import view.Ui;
 
 /**
  * Persistencia Proyectos Construcción
  *
  */
 public class App {
+
     public static void main(String[] args) {
 
         // Casos de prueba
@@ -21,5 +23,7 @@ public class App {
         VistaRequerimientosReto4.requerimiento4();
         System.out.println();
 
+        Ui objUi = new Ui();
+        objUi.setVisible(true);
     }
 }
