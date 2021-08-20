@@ -40,11 +40,11 @@ public class Ui extends JFrame {
         model.addColumn("Fecha Inicio");
         model.addColumn("Clasificación");
         panel.add(new JScrollPane(table));
-        vista_requerimiento_1();
+        requerimiento1();
         this.add(panel, BorderLayout.CENTER);
     }
 
-    public void vista_requerimiento_1() {
+    public void requerimiento1() {
 
         try {
 
